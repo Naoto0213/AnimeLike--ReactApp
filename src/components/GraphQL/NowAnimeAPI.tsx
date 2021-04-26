@@ -2,7 +2,7 @@ import gql from "graphql-tag";
 
 export const NOW_ANIME_API = gql`
   query searchWorks(
-      $seasons()
+      $seasons( !init )
       orderBy: { field: WATCHERS_COUNT, direction: DESC }
       first: 10
     ) {
