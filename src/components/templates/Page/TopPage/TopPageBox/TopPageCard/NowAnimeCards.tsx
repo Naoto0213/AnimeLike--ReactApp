@@ -7,6 +7,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import { gql, useQuery } from "@apollo/client";
+import { NOW_ANIME_API } from "../../../../../GraphQL/NowAnimeAPI";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,6 +31,12 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 12,
   },
 }));
+
+const NowAnimeAPI = () => {
+  const { loading, error, data } = useQuery(NOW_ANIME_API, {
+    variables: {},
+  });
+};
 
 const NowAnimeCards = () => {
   const classes = useStyles();

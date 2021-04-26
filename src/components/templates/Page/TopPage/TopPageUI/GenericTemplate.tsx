@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
-import LoginIcon from "../../UI/Loginicon";
-import Searchbox from "../../UI/Searchbox";
+import LoginIcon from "../TopPageUI/Loginicon";
+import Searchbox from "./Searchbox";
 
 // Material-Ui
 import { createMuiTheme } from "@material-ui/core/styles";

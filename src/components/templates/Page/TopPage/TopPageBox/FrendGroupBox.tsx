@@ -1,13 +1,12 @@
 import React from "react";
 import Swipers from "./Swipers";
-import FrendGroupCard from "../Cards/FrendGroupCard";
 
 // Material-UI
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import Button from "@material-ui/core/Button";
-import NowAnimeCards from "../Cards/NowAnimeCards";
-
+import NowAnimeCards from "./TopPageCard/NowAnimeCards";
+import FrendGroupCard from "./TopPageCard/FrendGroupCard";
 // Material-UI Icons
 
 // Style
@@ -64,11 +63,6 @@ const FrendGroupBox = (props) => {
       <Card className={classes.Cards}>
         <h2 className={classes.CardsTitle}>友達とアニメを共有しよう！</h2>
         <FrendGroupCard />
-        <div className={classes.AnimeCardsSP}>
-          <NowAnimeCards />
-          <NowAnimeCards />
-          <NowAnimeCards />
-        </div>
       </Card>
     </div>
   );
