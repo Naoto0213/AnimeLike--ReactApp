@@ -10,7 +10,7 @@ import SwiperCore, {
 import { makeStyles, Theme } from "@material-ui/core/styles";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import NowAnimeCards from "./TopPageCard/NowAnimeCards";
+import NowAnimeCards from "./Card/NowAnimeCards";
 
 // Import Swiper styles
 import "swiper/swiper.scss";

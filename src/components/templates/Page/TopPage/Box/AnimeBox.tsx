@@ -1,12 +1,10 @@
-import React from "react";
-import Swipers from "./Swipers";
-
 // Material-UI
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import Button from "@material-ui/core/Button";
-import NowAnimeCards from "./TopPageCard/NowAnimeCards";
-import FrendGroupCard from "./TopPageCard/FrendGroupCard";
+import NowAnimeCards from "./Card/NowAnimeCards";
+import Swipers from "./Swipers";
 // Material-UI Icons
 
 // Style
@@ -54,18 +52,32 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const FrendGroupBox = (props) => {
+const AnimeBox = (props) => {
   const { title } = props;
   const classes = useStyles();
 
   return (
     <div>
       <Card className={classes.Cards}>
-        <h2 className={classes.CardsTitle}>友達とアニメを共有しよう！</h2>
-        <FrendGroupCard />
+        <h2 className={classes.CardsTitle}>{title}</h2>
+        <div className={classes.Swipers}>
+          <Swipers />
+        </div>
+        <div className={classes.AnimeCardsSP}>
+          <NowAnimeCards />
+          <NowAnimeCards />
+          <NowAnimeCards />
+        </div>
+        <Button
+          variant="contained"
+          color="primary"
+          className={classes.CardBoxItemButton}
+        >
+          すべて見る
+        </Button>
       </Card>
     </div>
   );
 };
 
-export default FrendGroupBox;
+export default AnimeBox;

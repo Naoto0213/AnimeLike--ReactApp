@@ -1,9 +1,9 @@
 import React from "react";
 
-import GenericTemplate from "./TopPageUI/GenericTemplate";
-import FrendGroupBox from "./TopPageBox/FrendGroupBox";
-import TopPegeCards from "./TopPageBox/TopPageCard/TopPegeCards";
-import AnimeBox from "./TopPageBox/AnimeBox";
+import GenericTemplate from "./UI/GenericTemplate";
+import FrendGroupBox from "./Box/FrendGroupBox";
+import TopPegeCards from "./Box/Card/TopPegeCards";
+import AnimeBox from "./Box/AnimeBox";
 
 const boxTitles = [
   {

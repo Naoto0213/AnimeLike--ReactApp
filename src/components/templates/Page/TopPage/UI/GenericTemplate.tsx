@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import LoginIcon from "../TopPageUI/Loginicon";
+import LoginIcon from "./Loginicon";
 import Searchbox from "./Searchbox";
 
 // Material-Ui
