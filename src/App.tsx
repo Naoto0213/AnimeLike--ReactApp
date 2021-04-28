@@ -3,6 +3,7 @@ import React from "react";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 import { ApolloProvider } from "@apollo/react-hooks";
 import TopPage from "./components/templates/Page/TopPage/TopPage";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const client: any = new ApolloClient({
   cache: new InMemoryCache(),
@@ -11,13 +12,19 @@ const client: any = new ApolloClient({
 
 const App: React.FC = () => {
   return (
-    <div className="">
-      <ApolloProvider client={client}>
-        <MemoryRouter>
-          <TopPage />
-        </MemoryRouter>
-      </ApolloProvider>
-    </div>
+    <Router>
+      <div className="">
+        <ApolloProvider client={client}>
+          <MemoryRouter>
+            <Switch>
+              <Route path="/">
+                <TopPage />
+              </Route>
+            </Switch>
+          </MemoryRouter>
+        </ApolloProvider>
+      </div>
+    </Router>
   );
 };
 export default App;

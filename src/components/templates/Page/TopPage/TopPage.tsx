@@ -23,7 +23,7 @@ const boxTitles = [
 const TopPage: React.FC = () => {
   return (
     <div className="">
-      <GenericTemplate title="トップページ">
+      <GenericTemplate title="TopPage">
         <TopPegeCards />
         <FrendGroupBox />
         {boxTitles.map((data) => (
