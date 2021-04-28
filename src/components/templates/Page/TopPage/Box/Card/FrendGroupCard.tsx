@@ -1,7 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import { makeStyles, Theme } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-import { Link } from "react-router-dom";
+import { Link, Route, Switch } from "react-router-dom";
+import CrateGroup from "../../../CrateGroup/CrateGroup";
+import GroupList from "../../../CrateGroup/GroupList";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,6 +14,9 @@ const useStyles = makeStyles((theme) => ({
       minWidth: 220,
       marginBottom: 30,
     },
+  },
+  Link: {
+    textDecoration: "none",
   },
   bullet: {
     display: "inline-block",
@@ -46,16 +51,21 @@ const FrendGroupCard = () => {
 
   return (
     <div className="">
-      <Link to="CrateGroup">
+      <Link to="/CrateGroup" style={{ textDecoration: "none" }}>
         <Button variant="outlined" className={classes.CardsTitleButton}>
           グループを作成する
         </Button>
       </Link>
-      <Link to="GroupList">
+      <Link to="/GroupList" style={{ textDecoration: "none" }}>
         <Button variant="outlined" className={classes.CardsTitleButton}>
           グループを見る
         </Button>
       </Link>
+
+      <Switch>
+        <Route path="/CrateGroup" component={CrateGroup} />
+        <Route path="/Grouplist" component={GroupList} />
+      </Switch>
     </div>
   );
 };
