@@ -4,6 +4,7 @@ import React from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import { Button } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -50,6 +51,9 @@ const useStyles = makeStyles((theme: Theme) =>
         flexDirection: "column",
       },
     },
+    link: {
+      textDecoration: "none",
+    },
     CardsTitleButton: {
       margin: "0px 30px 60px",
       color: "white",
@@ -77,12 +81,16 @@ const TopPageCards: React.FC = () => {
         <h2>好きなアニメを管理しよう！</h2>
         <h3>好きなアニメを登録して見逃しを防ぐアプリ</h3>
         <div className={classes.ButtonBox}>
-          <Button variant="outlined" className={classes.CardsTitleButton}>
-            放送中アニメ
-          </Button>
-          <Button variant="outlined" className={classes.CardsTitleButton}>
-            お気に入りアニメを見る
-          </Button>
+          <Link to="/NowAnime" className={classes.link}>
+            <Button variant="outlined" className={classes.CardsTitleButton}>
+              放送中アニメ
+            </Button>
+          </Link>
+          <Link to="/FavoriteAnime" className={classes.link}>
+            <Button variant="outlined" className={classes.CardsTitleButton}>
+              お気に入りアニメを見る
+            </Button>
+          </Link>
         </div>
       </Card>
     </div>

@@ -54,8 +54,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const FrendGroupBox = (props) => {
-  const { title } = props;
+const FrendGroupBox = () => {
   const classes = useStyles();
 
   return (

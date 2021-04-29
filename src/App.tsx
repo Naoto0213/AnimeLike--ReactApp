@@ -1,7 +1,8 @@
 import React from "react";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
-import TopPage from "./components/templates/Page/TopPage/TopPage";
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
+import HeaderNav from "./components/templates/UI/HeaderNav";
+import Routers from "./components/Routers";
 
 const client: any = new ApolloClient({
   cache: new InMemoryCache(),
@@ -12,7 +13,9 @@ const App: React.FC = () => {
   return (
     <div className="">
       <BrowserRouter>
-        <TopPage />
+        <HeaderNav title="Top">
+          <Routers />
+        </HeaderNav>
       </BrowserRouter>
     </div>
   );

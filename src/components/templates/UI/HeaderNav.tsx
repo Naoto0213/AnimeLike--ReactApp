@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
-import LoginIcon from "./Loginicon";
-import Searchbox from "./Searchbox";
+import LoginIcon from "../../templates/Page/TopPage/UI/Loginicon";
+import Searchbox from "../../templates/Page/TopPage/UI/Searchbox";
 
 // Material-Ui
 import { createMuiTheme } from "@material-ui/core/styles";
@@ -30,7 +30,6 @@ import ListItemText from "@material-ui/core/ListItemText";
 
 // Material-Ui icons
 import ReplayIcon from "@material-ui/icons/Replay";
-import TvIcon from "@material-ui/icons/Tv";
 import LiveTvIcon from "@material-ui/icons/LiveTv";
 import StarIcon from "@material-ui/icons/Star";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -74,10 +73,10 @@ const useStyles = makeStyles((theme: Theme) =>
       }),
     },
     appBarShift: {
-      marginLeft: drawerWidth,
       width: `calc(100% - ${drawerWidth}px)`,
-      transition: theme.transitions.create(["width", "margin"], {
-        easing: theme.transitions.easing.sharp,
+      marginLeft: drawerWidth,
+      transition: theme.transitions.create(["margin", "width"], {
+        easing: theme.transitions.easing.easeOut,
         duration: theme.transitions.duration.enteringScreen,
       }),
     },
@@ -179,7 +178,7 @@ export interface GenericTemplateProps {
 }
 
 // Props
-const GenericTemplate: React.FC<GenericTemplateProps> = ({
+const HeaderNav: React.FC<GenericTemplateProps> = ({
   children,
   title,
 }): JSX.Element => {
@@ -244,18 +243,20 @@ const GenericTemplate: React.FC<GenericTemplateProps> = ({
           {/* menuItems */}
           <List>
             <Searchbox />
-            <Link to="/" className={classes.link}>
+            <Link to="/TopPage" className={classes.link}>
               <ListItem button>
                 <ListItemIcon>
                   <HomeIcon />
                 </ListItemIcon>
                 <ListItemText primary="トップページ" />
               </ListItem>
+            </Link>
+            <Link to="/CrateGroup" className={classes.link}>
               <ListItem button>
                 <ListItemIcon>
                   <GroupIcon />
                 </ListItemIcon>
-                <ListItemText primary="グループを作成する" />
+                <ListItemText primary="グループ" />
               </ListItem>
             </Link>
             <Link to="/" className={classes.link}>
@@ -264,14 +265,6 @@ const GenericTemplate: React.FC<GenericTemplateProps> = ({
                   <LiveTvIcon />
                 </ListItemIcon>
                 <ListItemText primary="今期のアニメ" />
-              </ListItem>
-            </Link>
-            <Link to="/products" className={classes.link}>
-              <ListItem button>
-                <ListItemIcon>
-                  <TvIcon />
-                </ListItemIcon>
-                <ListItemText primary="来期アニメ" />
               </ListItem>
             </Link>
             <Link to="/products" className={classes.link}>
@@ -307,4 +300,4 @@ const GenericTemplate: React.FC<GenericTemplateProps> = ({
   );
 };
 
-export default GenericTemplate;
+export default HeaderNav;

@@ -31,10 +31,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const NowAnimeCards = () => {
+const NowAnimeCards = (props) => {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
-
   return (
     <CardActionArea className={classes.root}>
       <CardContent>

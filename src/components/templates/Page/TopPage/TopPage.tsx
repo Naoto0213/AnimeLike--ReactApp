@@ -1,9 +1,8 @@
 import React from "react";
-
-import GenericTemplate from "./UI/GenericTemplate";
 import FrendGroupBox from "./Box/FrendGroupBox";
 import TopPegeCards from "./Box/Card/TopPegeCards";
 import AnimeBox from "./Box/AnimeBox";
+import HeaderNav from "../../UI/HeaderNav";
 
 const boxTitles = [
   {
@@ -23,13 +22,11 @@ const boxTitles = [
 const TopPage: React.FC = () => {
   return (
     <div className="">
-      <GenericTemplate title="TopPage">
-        <TopPegeCards />
-        <FrendGroupBox />
-        {boxTitles.map((data) => (
-          <AnimeBox title={data.title} />
-        ))}
-      </GenericTemplate>
+      <TopPegeCards />
+      <FrendGroupBox />
+      {boxTitles.map((data) => (
+        <AnimeBox title={data.title} />
+      ))}
     </div>
   );
 };
